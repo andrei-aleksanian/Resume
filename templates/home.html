@@ -1,42 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/home.css">
-    <meta charset="UTF-8">
-    <title>Andrei Aleksanian</title>
-</head>
-<body>
-    <header>
-        <div class="navigation">
-            <a href="#" class="logo">Andrei Aleksanian</a>
-            <nav>
-                <ul>
-                    <li><a href="#">Search</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Login</a></li>
-                </ul>
-            </nav>
+{%extends "layout.html"%}
+{%block content%}
+    <main>
+        <section class="home-banner">
+            <div>
+                <h2>I am a freelance software developer</h2>
+                <h1>With specialty in mobile applications,
+                    front-end web development,
+                    machine learning and data science.</h1>
+            </div>
+        </section>
+
+        <div class="wrapper">
+            <section class="buttons">
+                <a href="projects.html" class="link-box">
+                    <div>
+                        <h3>Projects</h3>
+                    </div>
+                </a>
+
+                <a href="resume.html" class="link-box-large">
+                    <div>
+                        <h3>Resume</h3>
+                    </div>
+                </a>
+
+                <a href="tutoring.html" class="link-box">
+                    <div>
+                        <h3>Tutoring</h3>
+                    </div>
+                </a>
+
+                <a href="about-me.html" class="link-box-large">
+                    <div>
+                        <h3>About Me</h3>
+                    </div>
+                </a>
+
+                <a href="contact.html" class="link-box">
+                    <div>
+                        <h3>Contact</h3>
+                    </div>
+                </a>
+
+                <a href="hobbies.html" class="link-box">
+                    <div>
+                        <h3>Hobbies</h3>
+                    </div>
+                </a>
+            </section>
         </div>
-    </header>
+    </main>
+{%endblock%}
 
-    <h2>Movies We Recommend You watch:</h2>
-    <div id="werecommend"></div>
-
-<script>
-    fetch("https://my-json-server.typicode.com/typicode/demo/posts")
-    .then(response => response.json())
-    .then(data => {
-        var display = document.getElementById("werecommend")
-        var list = document.createElement("ul")
-        data.forEach(i => {
-            var element = document.createElement("li")
-            element.innerHTML = "Movie title:"+ i['title']
-            list.appendChild(element)
-        })
-        display.appendChild(list)
-    })
-</script>
-</body>
-</html>
